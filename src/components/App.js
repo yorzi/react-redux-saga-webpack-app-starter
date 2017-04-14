@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { ProgressBar } from "react-bootstrap";
+import Menu from "./common/menu";
 import "../stylesheets/app.scss";
 
 // app component
@@ -24,6 +25,9 @@ export class App extends React.Component {
 
     return (
       <div className="container">
+        <div>
+          <Menu/>
+        </div>
         { children }
       </div>
     );

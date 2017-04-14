@@ -1,5 +1,4 @@
 import React from "react";
-import UserList from "./users/user_list";
 
 // Home page component
 export default class Home extends React.Component {
@@ -7,7 +6,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div className="page-home">
-        <UserList />
+        <h3>Welcome!</h3>
       </div>
     );
   }
