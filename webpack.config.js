@@ -1,11 +1,12 @@
 // http://webpack.github.io/docs/configuration.html
 // http://webpack.github.io/docs/webpack-dev-server.html
+var LoaderOptionsPlugin = require("webpack").LoaderOptionsPlugin;
 var app_root = 'src'; // the app root folder: src, src_users, etc
 var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  app_root: app_root, // the app root folder, needed by the other webpack configs
+  // app_root: app_root, // the app root folder, needed by the other webpack configs
   entry: [
     // http://gaearon.github.io/react-hot-loader/getstarted/
     'webpack-dev-server/client?http://localhost:8080',
@@ -22,17 +23,17 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['react-hot-loader/webpack', 'babel'],
+        loaders: ['react-hot-loader/webpack', 'babel-loader'],
         exclude: /node_modules/,
       },
       {
         // https://github.com/jtangelder/sass-loader
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css'],
+        loaders: ['style-loader', 'css-loader'],
       }
     ],
   },
@@ -44,6 +45,12 @@ module.exports = {
       root: __dirname + '/public',
       verbose: true,
       dry: false, // true for simulation
+    }),
+    new LoaderOptionsPlugin({
+      // test: /\.xxx$/, // may apply this only for some modules
+      options: {
+        app_root: app_root,
+      }
     }),
   ],
 };

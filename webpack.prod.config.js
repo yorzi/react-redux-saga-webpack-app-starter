@@ -5,7 +5,7 @@ module.exports = require('./webpack.config.js');    // inherit from the main con
 // disable the hot reload
 module.exports.entry = [
   'babel-polyfill',
-  __dirname + '/' + module.exports.app_root + '/index.js'
+  __dirname + '/src/index.js'
 ];
 
 // production env
@@ -30,7 +30,7 @@ module.exports.plugins.push(
 // export css to a separate file
 module.exports.module.loaders[1] = {
   test: /\.scss$/,
-  loader: ExtractTextPlugin.extract('css!sass'),
+  loader: ExtractTextPlugin.extract('css-loader!sass-loader'),
 };
 
 module.exports.plugins.push(
