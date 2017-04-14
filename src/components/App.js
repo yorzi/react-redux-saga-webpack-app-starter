@@ -7,6 +7,7 @@ export class App extends React.Component {
   // pre-render logic
   componentWillMount() {
     // the first time we load the app, we need that users list
+    console.log("APP mounted");
     this.props.dispatch({type: 'USERS_FETCH_LIST'});
   }
 
