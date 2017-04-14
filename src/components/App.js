@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { ProgressBar } from "react-bootstrap";
 import "../stylesheets/app.scss";
 
 // app component
@@ -14,6 +15,12 @@ export class App extends React.Component {
   // render
   render() {
     const { users, children } = this.props;
+
+    if (!users.length) {
+      return (
+        <ProgressBar active now={100}/>
+      );
+    }
 
     return (
       <div className="container">
