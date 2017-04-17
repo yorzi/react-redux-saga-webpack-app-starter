@@ -1,16 +1,16 @@
 {
-  "name": "goodyear-client",
+  "name": "react-redux-saga-webpack-app-starter",
   "version": "1.0.0",
-  "description": "For goodyear.",
+  "description": "A start of React/Redux/Saga/Webpack/Babel.",
   "keywords": [
     "react",
     "redux"
   ],
   "main": "index.js",
-  "homepage": "http://redux-minimal.js.org/",
+  "homepage": "https://github.com/yorzi/react-redux-saga-webpack-app-starter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/catalin-luntraru/redux-minimal"
+    "url": "https://github.com/yorzi/react-redux-saga-webpack-app-starter"
   },
   "scripts": {
     "start": "webpack-dev-server --inline --hot --history-api-fallback --host localhost --port 8080",
@@ -26,7 +26,7 @@
       "stage-3"
     ]
   },
-  "author": "Catalin Luntraru",
+  "author": "Andy Wang",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.5.8",
