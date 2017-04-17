@@ -9,9 +9,12 @@ module.exports.entry = [
 ];
 
 // export css to a separate file
-module.exports.module.loaders[1] = {
+module.exports.module.rules[1] = {
   test: /\.scss$/,
-  loader: ExtractTextPlugin.extract('css-loader!sass-loader'),
+  use: ExtractTextPlugin.extract({
+    fallback: "style-loader",
+    use: "css-loader"
+  })
 };
 
 module.exports.plugins.push(
