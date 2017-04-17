@@ -20,20 +20,35 @@ module.exports = {
     filename: 'bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loaders: ['react-hot-loader/webpack', 'babel-loader'],
+        use: ['react-hot-loader/webpack', 'babel-loader'],
         exclude: /node_modules/,
       },
       {
         // https://github.com/jtangelder/sass-loader
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [{
+                  loader: "style-loader" // creates style nodes from JS strings
+              }, {
+                  loader: "css-loader" // translates CSS into CommonJS
+              }, {
+                  loader: "sass-loader" // compiles Sass to CSS
+              }]
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader'],
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000
+          }
+        }
       }
     ],
   },
