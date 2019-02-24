@@ -69,7 +69,7 @@ export class UserList extends React.Component {
 
   // change the user lists' current page
   changePage(page) {
-    this.props.dispatch(push('/?page=' + page));
+    this.props.dispatch(push('/users?page=' + page));
   }
 
   // show the delete user prompt
